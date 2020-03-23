@@ -19,7 +19,7 @@
           <!-- Primeiro bloco -->
         <div v-for="(edge,index) in $page.posts.edges" :key="edge.node.id" :post="edge.node">
 
-          <div class="details" v-if="$page.posts.edges[index*2]">  
+          <div class="detailsLeft" v-if="$page.posts.edges[index*2]">  
               <div class="bullet">
                 <img src="@/static/bullet-01.png">
               </div>
@@ -41,7 +41,7 @@
         
         
           <!-- Segundo bloco -->
-          <div class="details" v-if="$page.posts.edges[index*2+1]">
+          <div class="detailsRight" v-if="$page.posts.edges[index*2+1]">
               <div class="bullet">
                 <img src="@/static/bullet-01.png">
               </div>
@@ -59,26 +59,16 @@
           </div> 
         </div>
 
+      </div>
+      <div class="bot">
+      </div>
         </div>
       
-      </div>
 
     </div>
 
 </template>
 
-<page-query>
-  query {
-    posts:allBlogPost {
-      edges{
-        node{
-          title
-          slug
-        }
-      }
-    }
-  }
-</page-query>
 
 <script>
 export default {
@@ -97,6 +87,19 @@ export default {
 }
 </script>
 
+<page-query>
+  query {
+    posts:allBlogPost {
+      edges{
+        node{
+          title
+          slug
+        }
+      }
+    }
+  }
+</page-query>
+
 
 <style>
 
@@ -111,7 +114,7 @@ export default {
 
 .content {
   max-width: 1170px;
-  height: 987px;
+  min-height: 100px;
   margin: auto;
   background-color: #333640;
   border-radius: 0px 0px 20px 20px;
@@ -136,7 +139,7 @@ export default {
 
 .titleContent-contentFeture {
   width: 370px;
-  height: 100px;
+  min-height: 100px;
   margin-top: 37px;
   margin-left: 58px;
   font-size: 28px;
@@ -148,7 +151,7 @@ export default {
 
 .groupDetails{
   max-width: 757px;
-  max-height: 160px;
+  /* min-height: 160px; */
   /* margin-right: 125px; */
   margin-top: 103px;
   /* float: right; */
@@ -157,18 +160,32 @@ export default {
   margin: 103px auto 0 auto;
 }
 
-.details{
+.detailsLeft{
+  margin-top:0%;
   max-width: 337px;
   height: 100%;
   margin-top: 0px;
-  margin-left: 55px;
+  /* margin-left: 55px; */
   margin-bottom: 50px;
   display: inline-block;
+  vertical-align: top;
+}
+
+.detailsRight{
+  margin-top:0%;
+  max-width: 337px;
+  height: 100%;
+  margin-top: 0px;
+  margin-left: 123px;
+  margin-bottom: 50px;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .bullet {
   width: 20px;
-  height: 160px;
+  height: 240px;
+  /* height: 100%; */
   margin-top: 4px;
   margin-right: 8px;  
   float: left;
@@ -199,7 +216,9 @@ export default {
 
 .contentFeature{
   max-width: 317px;
-  height: 84px;
+  /* min-height: 84px; */
+  height: 100%;
+
   /* margin-top: 17px; */
   /* font-family: RobotoSlab; */
   font-family: 'Roboto Slab', serif;
@@ -210,7 +229,12 @@ export default {
   line-height: 1.56;
   letter-spacing: 0.5px;
   color: #ffffff;
-  /* text-align: justify; */
+  text-align: justify;
+}
+
+.bot{
+  width: 100%;
+  height: 95px;
 }
 
 </style>
