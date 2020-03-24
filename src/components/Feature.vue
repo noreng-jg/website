@@ -135,6 +135,7 @@ export default {
   height: 83px;
   /* object-fit: contain; */
   display: inline-block;
+  vertical-align: top;
 }
 
 .titleContent-contentFeture {
@@ -146,6 +147,7 @@ export default {
   line-height: 1.43;
   letter-spacing: 0px;
   display: inline-block;
+  /* vertical-align: bottom; */
   
 }
 
@@ -162,7 +164,7 @@ export default {
 
 .detailsLeft{
   margin-top:0%;
-  max-width: 337px;
+  width: 337px;
   height: 100%;
   margin-top: 0px;
   /* margin-left: 55px; */
@@ -173,10 +175,11 @@ export default {
 
 .detailsRight{
   margin-top:0%;
-  max-width: 337px;
+  width: 337px;
   height: 100%;
   margin-top: 0px;
-  margin-left: 123px;
+  /* margin-left: 123px; */
+  margin-left: 83px;
   margin-bottom: 50px;
   display: inline-block;
   vertical-align: top;
@@ -184,18 +187,28 @@ export default {
 
 .bullet {
   width: 20px;
-  height: 240px;
-  /* height: 100%; */
+  /* height: 240px; */
+  height: 100%;
   margin-top: 4px;
-  margin-right: 8px;  
-  float: left;
-  text-align: center;
+  /* margin-right: 8px;   */
+  /* float: left; */
+  /* text-align: center; */
+  /* display: inline-block; */
+  display: inline-block;
+  vertical-align: top;
 }
 
 .blockContentFeature {
-  max-width: 317px;
+  width: 317px;
   height: 100%;
   margin-left: 0px;
+  display: inline-block;
+
+  /* float: right; */
+  /* vertical-align: top; */
+
+
+  /* display: inline-block; */
 }
 
 .titleFeature {
@@ -229,7 +242,7 @@ export default {
   line-height: 1.56;
   letter-spacing: 0.5px;
   color: #ffffff;
-  text-align: justify;
+  /* text-align: justify; */
 }
 
 .bot{
