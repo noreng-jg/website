@@ -109,20 +109,11 @@
 
 
         if((this.username != '') && (this.password != '') && (this.againPassword != '') && (this.password == this.againPassword)){
-          
-          // const headers = {
-          //   'Access-Control-Allow-Origin': '*',
-          //   'Content-Type': 'text/plain',
-          //   'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, OPTIONS',
-          // };
-          
           this.axios
-            .post(process.env.GRIDSOME_API_URL,{
+            .post('http://localhost:8081/register',{
               username: this.username,
               password: this.password
             })
-            // {headers})
-            // { useCredentails: true })
             .then(response => {
               console.log(response)
               this.$buefy.dialog.alert({
